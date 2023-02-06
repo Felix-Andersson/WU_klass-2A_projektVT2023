@@ -1,16 +1,84 @@
 /* General styling for all pages */
+/* Color palette: https://colorhunt.co/palette/6096b493bfcfbdcdd6eee9da */
 *{
     padding: 0;
     margin: 0;
     display: flexbox;
 }
 
-nav{
+header {
+    grid-area: hea;
+}
 
+h1 {
+    background-color: rgb(96, 150, 180);
+    z-index: 1;
+}
+
+nav{
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(96, 150, 180);
+}
+
+#nav_links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#arrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 40px;
+    background-color: red;/*rgb(96, 150, 180);*/
+    border-radius: 10%;
+}
+
+#arrow div{
+    width: 15px;
+    height: 5px;
+    background-color: black;
+    border-radius: 30%;
+    transition: all 0.5s;
+}
+
+#arrow_line_1 {
+    transform: rotate(25deg) translate(-4px, 5px);
+}
+#arrow_line_2 {
+    transform: rotate(-25deg) translate(7px, 1px);
+}
+
+.nav_toggle {
+    transform: translateY(50px)
+}
+.arrow_toggle #arrow_line_1 {
+    transform: rotate(-50deg) translate(0px, 6px);
 }
 
 
 /* Styling for Home page */
+#grid_wrapper_home {
+    display: grid;
+    grid-template-rows: 100vw;
+    grid-template-columns: 100px 50px 1fr;
+    grid-template-areas:
+    "hea"
+    "nav"
+    ".";
+}
 /* Styling for Profiles page */
 /* Styling for Theory page */
 /* Styling for About page */
