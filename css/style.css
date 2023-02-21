@@ -6,25 +6,34 @@
     display: flexbox;
 }
 
-header {
+header {    
     grid-area: hea;
 }
 
 h1 {
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
     background-color: rgb(96, 150, 180);
     z-index: 1;
+    border-style: none none solid none;
 }
 
 nav{
+    position: fixed;
+    top: 0px;
+    left: 0px;
     grid-area: nav;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background-color: rgb(96, 150, 180);
+    background-color: rgb(48, 102, 131);
+    border-style: none none solid none;
 }
 
 #nav_links {
     list-style: none;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -36,14 +45,20 @@ a {
 }
 
 #arrow {
+    position: fixed;
+    right: 0px;
+    top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
     width: 40px;
+    height: 15px;
     background-color: red;/*rgb(96, 150, 180);*/
-    border-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-style: none solid solid solid;
 }
 
 #arrow div{
@@ -62,7 +77,7 @@ a {
 }
 
 .nav_toggle {
-    transform: translateY(50px)
+    transform: translateY(30px)
 }
 .arrow_toggle #arrow_line_1 {
     transform: rotate(-50deg) translate(0px, 6px);
@@ -72,8 +87,8 @@ a {
 /* Styling for Home page */
 #grid_wrapper_home {
     display: grid;
-    grid-template-rows: 100vw;
-    grid-template-columns: 100px 50px 1fr;
+    grid-template-rows: 50px 50px 1fr;
+    grid-template-columns: 100vw;
     grid-template-areas:
     "hea"
     "nav"
