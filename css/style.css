@@ -22,12 +22,11 @@ h1 {
 
 nav{
     position: fixed;
-    top: 0px;
+    top: 20px;
     left: 0px;
     grid-area: nav;
     display: flex;
     flex-direction: row;
-    background-color: rgb(48, 102, 131);
     border-style: none none solid none;
 }
 
@@ -37,6 +36,7 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: rgb(48, 102, 131);
 }
 
 a {
@@ -66,7 +66,7 @@ a {
     height: 5px;
     background-color: black;
     border-radius: 30%;
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 
 #arrow_line_1 {
@@ -77,10 +77,21 @@ a {
 }
 
 .nav_toggle {
-    transform: translateY(30px)
+    transform: translateY(20px);
+    z-index: 1;
+    border-style: none none solid none;
+    transition: all 0.2s;
+}
+
+.arrow_toggle {
+    transform: translate(0px, 20px);
+    transition: all 0.2s;
 }
 .arrow_toggle #arrow_line_1 {
-    transform: rotate(-50deg) translate(0px, 6px);
+    transform: rotate(-30deg) translate(-5px, 0px);
+}
+.arrow_toggle #arrow_line_2 {
+    transform: rotate(30deg) translate(5px, -5px);
 }
 
 
