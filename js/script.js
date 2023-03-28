@@ -1,6 +1,6 @@
 const arrow = document.getElementById('arrow');
 const nav = document.getElementById('nav_links');
-const field = document.querySelector('input[type="text"]');
+const searchbar = document.querySelector('input[type="text"]');
 const list = document.getElementById('list');
 
 function toggleMenu() {
@@ -12,8 +12,8 @@ function toggleList() {
 }
 
 arrow.addEventListener('click', toggleMenu);
-field.addEventListener('focus', toggleList);
-field.addEventListener('blur', toggleList);
+searchbar.addEventListener('focus', toggleList);
+searchbar.addEventListener('blur', toggleList);
 
 function search_type() {
     let input = document.getElementById('searchbar').value.toLowerCase();
