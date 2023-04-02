@@ -91,7 +91,6 @@ input[type=text]:focus {
     position: fixed;
     display: flex;
     flex-direction: column;
-    align-items: center;
     top: -1500px;
     right: 10px;
     list-style: none;
@@ -102,12 +101,18 @@ input[type=text]:focus {
 }
 .list_toggle {
     transform: translateY(1538px);
-    transition-delay: 0.15s;
 }
  
 .types {
-   display: list-item;  
-} 
+    display: list-item;
+    border: 4px solid rgb(39, 73, 91, 0.3);
+    border-style: none none solid none;
+    width: 200px;
+    text-align: center;
+}
+.types:hover {
+    text-decoration:underline;
+}
 
 nav {
     z-index: 1;
@@ -192,7 +197,7 @@ a {
 /* Styling for Home page */
 #grid_wrapper_home {
     display: grid;
-    grid-template-rows: 40px 50px 43vh 70vh 73vh 65vh 60px;
+    grid-template-rows: 40px 50px 42vh 70vh 73vh 65vh 60px;
     grid-template-columns: 100vw;
     grid-template-areas:
     "hea"
@@ -239,7 +244,7 @@ a {
     width: 90vw;
     height: auto;
     position: relative;
-    top: -70px;
+    top: -75px;
 }
 
 .margin_text_1 {
@@ -248,6 +253,7 @@ a {
     margin: 50px;
     position: relative;
     top: -30px;
+    text-align: start;
 }
 #margin_text_2 {
     margin: 50px;
@@ -273,7 +279,7 @@ a {
 /* Styling for Profiles page */
 #grid_wrapper_profiles {
     display: grid;
-    grid-template-rows: 100px 50px repeat(6, 50vh) 43vh 60px;
+    grid-template-rows: 100px 50px repeat(5, 60vh) 46vh 60px;
     grid-template-columns: 100vw;
     grid-template-areas:
     "hea"
@@ -284,73 +290,425 @@ a {
     "ar4"
     "ar5"
     "ar6"
-    "rub"
     "foo";
-}
-
-#rubrik {
-    grid-area: rub;
 }
 
 #article_1 {
     grid-area: ar1;
-
-}
-#article_2 {
-    grid-area: ar2;
-}
-#article_3 {
-    grid-area: ar3;
-}
-#article_4 {
-    grid-area: ar4;
-}
-#article_5 {
-    grid-area: ar5;
-}
-#article_6 {
-    grid-area: ar6;
+    margin-top: 6vh;
 }
 
+#article_2 {grid-area: ar2;}
 
-.sexta_sections {
+#article_3 {grid-area: ar3;}
+
+#article_4 {grid-area: ar4;}
+
+#article_5 {grid-area: ar5;}
+
+#article_6 {grid-area: ar6;}
+
+.sidescroll_sections {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+
+    width: calc(100vw - 8px);    /*-8px pga border som tar upp plats*/
     height: 40vh;
     border: solid 4px rgb(39, 73, 91);
-    border-style: solid none solid none;
+
+    border-style: solid solid solid solid;
     overflow-x: scroll;
     overflow-y: hidden;
     scrollbar-width: none;      /* Firefox kanske lägga till fler webbläsare??*/
 }
-.sidescroll_sections {
-    display: flex;
-    justify-content: space-between;
-    width: 300vw;
-}
 .type_sections {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    white-space: nowrap;
     border: solid 4px rgb(39, 73, 91);
-    border-style: none solid none solid;
+    border-style: none solid none none;
     width: 40vw;
     height: 40vh;
     background-color: rgb(96, 150, 180);
 }
+.type_sections:last-of-type{border:none}    /*gör så att sista elementet inte har border då den hade blivit dubbelt så stor annars*/
 .type_sections img {
     object-fit: cover;
+    border-bottom: 4px solid rgb(39, 73, 91);
     width: 40vw;
     height: 32vh;
+    transition: all 0.15s ease-in;
+}
+.type_sections:hover img{box-shadow: 0px 70px 0px rgba(255, 255, 255, 1);}
+
+#color_bubbles_background {
+    z-index: -1;
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    top: 180vh;
+}
+
+#center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for Descriptions page */
+#grid_wrapper_descriptions {
+    display: grid;
+    grid-template-rows: 40px 70px repeat(6, 340vh) 60px;
+    grid-template-columns: 100vw;
+    grid-template-areas:
+    "hea"
+    "nav"
+    "ena"
+    "dio"
+    "tri"
+    "tes"
+    "pen"
+    "exi"
+    "foo";
+}
+
+table {
+    border: 4px solid rgb(39, 73, 91);
+    width: 100vw;
+    height: 50vh
+}
+
+.margin_text_3 {
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+#ena {
+    position: relative;
+    grid-area: ena;
+}
+#ena div {
+    background-color: rgba(22, 188, 163, 0.5);
+    width: 100vw;
+    height: 3vh;
+    position: absolute;
+    top: 2vh;
+    z-index: -1;
+}
+#ena td {
+    border: 4px solid rgba(22, 188, 163, 0.2);
+}
+
+#dio {
+    position: relative;
+    grid-area: dio;
+}
+#dio div {
+    background-color: rgba(48, 158, 40, 0.5);
+    width: 100vw;
+    height: 3vh;
+    position: absolute;
+    top: 2vh;
+    z-index: -1;
+}
+#dio td {
+    border: 4px solid rgba(48, 158, 40, 0.2);
+}
+
+#tria {
+    position: relative;
+    grid-area: tri;
+}
+#tria div {
+    background-color: rgba(255, 206, 57, 0.5);
+    width: 100vw;
+    height: 3vh;
+    position: absolute;
+    top: 2vh;
+    z-index: -1;
+}
+#tria td {
+    border: 4px solid rgba(255, 206, 57, 0.2);
+}
+
+#tessera {
+    position: relative;
+    grid-area: tes;
+}
+#tessera div {
+    background-color: rgba(255, 113, 52, 0.5);
+    width: 100vw;
+    height: 3vh;
+    position: absolute;
+    top: 2vh;
+    z-index: -1;
+}
+#tessera td {
+    border: 4px solid rgba(255, 113, 52, 0.2);
+}
+
+#pente {
+    position: relative;
+    grid-area: pen;
+}
+#pente div {
+    background-color: rgba(201, 11, 103, 0.5);
+    width: 100vw;
+    height: 3vh;
+    position: absolute;
+    top: 2vh;
+    z-index: -1;
+}
+#pente td {
+    border: 4px solid rgba(201, 11, 103, 0.2);
+}
+
+#exi {
+    position: relative;
+    grid-area: exi;
+}
+#exi div {
+    background-color: rgba(80, 21, 200, 0.5);
+    width: 100vw;
+    height: 3vh;
+    position: absolute;
+    top: 2vh;
+    z-index: -1;
+}
+#exi td {
+    border: 4px solid rgba(80, 21, 200, 0.2);
 }
 
 
-/* Styling for Theory page */
 /* Styling for About page */
+#grid_wrapper_about {
+    display: grid;
+    grid-template-rows: 40px 60px 40vh 65vh 90vh 60px;
+    grid-template-columns: 100vw;
+    grid-template-areas:
+    "hea"
+    "nav"
+    "lin"
+    "txt"
+    "map"
+    "foo";
+}
 
+#lines_och_bild {
+    grid-area: lin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#lines {
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 15vh;
+}
+#line_1 {background-color: rgba(48, 158, 40, 0.7); width: 100vw; height: 2vh;}
+#line_2 {background-color: rgba(255, 206, 57, 0.7); width: 100vw; height: 2vh;}
+#line_3 {background-color: rgba(255, 113, 52, 0.7); width: 100vw; height: 2vh;}
+#line_4 {background-color: rgba(201, 11, 103, 0.7); width: 100vw; height: 2vh;}
+
+#me {
+    position: absolute;
+    object-fit: cover;
+    border: 4px solid rgb(39, 73, 91);
+    width: 50vw;
+    height: auto;
+    transition: transform 0.20s ease-in;
+}
+#me:hover {transform: scale(1.05);}
+
+#about_me {grid-area: txt;}
+
+#map {
+    grid-area: map;
+    text-align: center;
+}
+#map iframe {
+    width: 300px;
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+
+@media screen and (min-width: 800px){
 /* [Computer] General styling for all pages */
+h2 {
+    font-size: 5rem;
+}
+h3 {
+    font-size: 4rem;
+}
+p {
+    font-size: 1.4rem;
+}
+
 /* [Computer] Styling for Home page */
+#grid_wrapper_home {
+    grid-template-rows: 40px 220px 92vh 50vh 80vh 60px;
+    grid-template-columns: 50vw 50vw;
+    grid-template-areas:
+    "hea hea"
+    "nav nav"
+    "rub rub"
+    "se1 se1"
+    "se2 se3"
+    "foo foo";
+}
+
+#color_bubbles {
+    top: -50vh;
+}
+#color_bubbles_2 {
+    top: -90px;
+    width: 30vw;
+}
+
+.margin_text_1 {
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+.margin_text_3 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+.youtube_videos {
+    width: 256px;
+    height: 144px;
+}
+
 /* [Computer] Styling for Profiles page */
-/* [Computer] Styling for Theory page */
+#grid_wrapper_profiles {
+    display: grid;
+    grid-template-rows: 100px 50px repeat(5, 80vh) 70vh 60px;
+    grid-template-columns: 100vw;
+    grid-template-areas:
+    "hea"
+    "nav"
+    "ar1"
+    "ar2"
+    "ar3"
+    "ar4"
+    "ar5"
+    "ar6"
+    "foo";
+}
+
+.sidescroll_sections {
+    height: 60vh;
+}
+.type_sections {
+    height: 60vh;
+    width: 30vw;
+}
+.type_sections img {
+    border-style: none solid solid solid;
+    height: 50vh;
+    width: auto;
+}
+/* [Computer] Styling for Descriptions page */
+#grid_wrapper_descriptions {
+    display: grid;
+    grid-template-rows: 40px 70px repeat(3, 370vh) 60px;
+    grid-template-columns: 50vw 50vw;
+    grid-template-areas:
+    "hea hea"
+    "nav nav"
+    "ena dio"
+    "tri tes"
+    "pen exi"
+    "foo foo";
+}
+
+table {
+    width: 40vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#ena div {
+    height: 5vh;
+    top: 3vh;
+}
+#dio div {
+    height: 5vh;
+    top: 3vh;
+}
+#tria div {
+    height: 5vh;
+    top: 3vh;
+}
+#tessera div {
+    height: 5vh;
+    top: 3vh;
+}
+#pente div {
+    height: 5vh;
+    top: 3vh;
+}
+#exi div {
+    height: 5vh;
+    top: 3vh;
+}
+
 /* [Computer] Styling for About page */
+#grid_wrapper_about {
+    display: grid;
+    grid-template-rows: 40px 100px 40vh 60vh 70vh 60px;
+    grid-template-columns: 100vw;
+    grid-template-areas:
+    "hea"
+    "nav"
+    "lin"
+    "txt"
+    "map"
+    "foo";
+}
+#about_me {
+    margin-top: 70px;
+}
+
+#lines {
+    height: 25vh;
+}
+#line_1 {height: 4vh;}
+#line_2 {height: 4vh;}
+#line_3 {height: 4vh;}
+#line_4 {height: 4vh;}
+
+#me {
+    width: 30vw;
+}
+
+#map {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* text-align: start; */
+    margin-left: 40px;
+}
+#left {
+    position: absolute;
+    left: 5vw;
+    top: 15vh;
+    width: 50vw;
+}
+#right {
+    position: absolute;
+    top: 15vh;
+    right: 5vw;
+    width: 50vw;
+}
+#map iframe {
+    width: 500px;
+    height: 250px;
+    margin-bottom: 50px;
+}
+}
