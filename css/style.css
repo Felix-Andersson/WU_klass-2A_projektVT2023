@@ -232,14 +232,14 @@ a {
     align-items: center;
 }
 
-#color_bubbles {
+.color_bubbles {
     z-index: -1;
     width: 100%;
     height: auto;
     position: relative;
     top: -40px;
 }
-#color_bubbles_2 {
+.color_bubbles_2 {
     z-index: -1;
     width: 90vw;
     height: auto;
@@ -563,10 +563,10 @@ p {
     "foo foo";
 }
 
-#color_bubbles {
+.color_bubbles {
     top: -50vh;
 }
-#color_bubbles_2 {
+.color_bubbles_2 {
     top: -90px;
     width: 30vw;
 }
