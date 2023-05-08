@@ -1,5 +1,5 @@
 const arrow = document.getElementById('arrow');
-const nav = document.getElementById('nav_links');
+const nav = document.getElementById('nav');
 const searchbar = document.querySelector('input[type="text"]');
 const list = document.getElementById('list');
 
