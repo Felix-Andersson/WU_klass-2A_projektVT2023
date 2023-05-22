@@ -1,10 +1,12 @@
-const arrow = document.getElementById('arrow');
+const arrow_line_1 = document.getElementById('arrow_line_1');
+const arrow_line_2 = document.getElementById('arrow_line_2');
 const nav = document.getElementById('nav');
 const searchbar = document.querySelector('input[type="text"]');
 const list = document.getElementById('list');
 
 function toggleMenu() {
-    arrow.classList.toggle('arrow_toggle');
+    arrow_line_1.classList.toggle('arrow_toggle_1');
+    arrow_line_2.classList.toggle('arrow_toggle_2');
     nav.classList.toggle('nav_toggle');
 }
 function toggleList(time) {

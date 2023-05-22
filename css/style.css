@@ -6,6 +6,8 @@
     margin: 0;
     display: flexbox;
     color: rgb(39, 73, 91);
+    font-size: 100%;    /*för att göra fonten lika stor över webbläsare*/
+    line-height: 120%;  /*för att göra fonten lika stor över webbläsare*/
 }
 
 p {
@@ -120,7 +122,7 @@ nav {
     position: fixed;
     z-index: 1;
     width: 100%;
-    top: 26px;
+    top: 56px;
     left: 0px;
     grid-area: nav;
     display: flex;
@@ -128,6 +130,7 @@ nav {
     background-color: rgb(48, 102, 131);
     border-color: rgb(39, 73, 91);
     border-style: none none solid none;
+    transition: all 0.2s;
 }
 nav a:active {
     color: white;
@@ -147,9 +150,9 @@ a {
 }
 
 #arrow {
-    position: fixed;
+    position: absolute;
     right: 0px;
-    top: 46px;
+    top: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,38 +167,42 @@ a {
     border-style: none solid solid solid;
 }
 
-#arrow div{
+#arrow div {
     width: 15px;
     height: 5px;
+    position: relative;
     background-color: rgb(39, 73, 91);
     border-radius: 30%;
     transition: all 0.2s
 }
 
 #arrow_line_1 {
-    transform: rotate(25deg) translate(-4px, 5px);
+    rotate: -30deg;
+    left: -5px;
+    top: 3px;
 }
 #arrow_line_2 {
-    transform: rotate(-25deg) translate(7px, 1px);
+    rotate: 30deg;
+    left: 6px;
+    top: -2px;
 }
 
 .nav_toggle {
-    transform: translateY(28px);
-    transition: all 0.2s;
+    transform: translateY(-24px);
 }
 
-.arrow_toggle #arrow_line_1 {
-    transform: rotate(-30deg) translate(-6px, 1px);
+.arrow_toggle_1 {
+    transform: rotate(60deg);
 }
-.arrow_toggle #arrow_line_2 {
-    transform: rotate(30deg) translate(5px, -4px);
+.arrow_toggle_2 {
+    transform: rotate(-60deg);
 }
 
 
 /* Styling for Home page */
 #grid_wrapper_home {
     display: grid;
-    grid-template-rows: 300px 500px 530px 500px 60px;
+    grid-template-rows: 430px 500px 530px 500px 60px;
     grid-template-columns: 100%;
     grid-template-areas:
     "rub"
@@ -207,6 +214,8 @@ a {
 
 #rubrik_och_bild {
     grid-area: rub;
+    position: relative;
+    top: 100px;
 }
 
 #section_1 {
@@ -244,7 +253,6 @@ a {
 }
 
 .margin_text_1 {
-    background-color: rgb(189, 205, 214);
     margin-top: 30px;
     margin: 50px;
     position: relative;
@@ -552,6 +560,13 @@ h3 {
 }
 p {
     font-size: 1.4rem;
+}
+
+#arrow {
+    display: none;
+}
+.nav_toggle {
+    transform: translateY(0);
 }
 
 /* [Computer] Styling for Home page */
