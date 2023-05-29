@@ -4,7 +4,6 @@
 *{
     padding: 0;
     margin: 0;
-    display: flexbox;
     color: rgb(39, 73, 91);
     font-size: 100%;    /*för att göra fonten lika stor över webbläsare*/
     line-height: 120%;  /*för att göra fonten lika stor över webbläsare*/
@@ -214,6 +213,7 @@ a {
 
 #rubrik_och_bild {
     grid-area: rub;
+    text-align: center;
     position: relative;
     top: 100px;
 }
@@ -246,7 +246,7 @@ a {
 }
 .color_bubbles_2 {
     z-index: -1;
-    width: 90vw;
+    width: 450px;
     height: auto;
     position: relative;
     top: -75px;
@@ -288,11 +288,10 @@ a {
 /* Styling for Profiles page */
 #grid_wrapper_profiles {
     display: grid;
-    grid-template-rows: 100px 50px repeat(5, 60vh) 46vh 60px;
-    grid-template-columns: 100vw;
+    grid-template-rows: 250px repeat(5, 650px) 650px 60px;
+    grid-template-columns: 100%;
     grid-template-areas:
-    "hea"
-    "nav"
+    "ru2"
     "ar1"
     "ar2"
     "ar3"
@@ -302,9 +301,17 @@ a {
     "foo";
 }
 
+#profiles_rubrik {
+    grid: ru2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+}
+
 #article_1 {
     grid-area: ar1;
-    margin-top: 6vh;
+    margin-top: 5px;
 }
 
 #article_2 {grid-area: ar2;}
@@ -321,14 +328,17 @@ a {
     display: flex;
     justify-content: space-between;
 
-    width: calc(100vw - 8px);    /*-8px pga border som tar upp plats*/
-    height: 40vh;
+    width: calc(100% - 8px);    /*-8px pga border som tar upp plats*/
+    height: 300px;
     border: solid 4px rgb(39, 73, 91);
 
     border-style: solid solid solid solid;
     overflow-x: scroll;
     overflow-y: hidden;
     scrollbar-width: none;      /* Firefox kanske lägga till fler webbläsare??*/
+}
+.sidescroll_sections::-webkit-scrollbar{
+    display: none;          /* IE and Edge göm scrollbar*/
 }
 .type_sections {
     display: inline-block;
@@ -338,7 +348,7 @@ a {
     border: solid 4px rgb(39, 73, 91);
     border-style: none solid none none;
     width: 40vw;
-    height: 40vh;
+    height: 300px;
     background-color: rgb(96, 150, 180);
 }
 .type_sections:last-of-type{border:none}    /*gör så att sista elementet inte har border då den hade blivit dubbelt så stor annars*/
@@ -357,12 +367,6 @@ a {
     height: auto;
     position: absolute;
     top: 180vh;
-}
-
-#center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* Styling for Descriptions page */
@@ -581,7 +585,9 @@ p {
     "se2 se3"
     "foo foo";
 }
-
+#rubrik_och_bild {
+    top: -20px;
+}
 .color_bubbles {
     top: -50vh;
 }
